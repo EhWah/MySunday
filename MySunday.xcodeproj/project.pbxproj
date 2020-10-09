@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB44E7812530BF98005C78E0 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB44E7802530BF98005C78E0 /* CollectionViewCell.swift */; };
+		FB44E7842530DD0B005C78E0 /* Tharlon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB44E7832530DD0B005C78E0 /* Tharlon-Regular.ttf */; };
 		FB67FB1D252BE99B00B7D5C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB67FB1C252BE99B00B7D5C3 /* AppDelegate.swift */; };
 		FB67FB1F252BE99B00B7D5C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB67FB1E252BE99B00B7D5C3 /* SceneDelegate.swift */; };
 		FB67FB21252BE99B00B7D5C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB67FB20252BE99B00B7D5C3 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB44E7802530BF98005C78E0 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		FB44E7832530DD0B005C78E0 /* Tharlon-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tharlon-Regular.ttf"; sourceTree = "<group>"; };
 		FB67FB19252BE99B00B7D5C3 /* MySunday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySunday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB67FB1C252BE99B00B7D5C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB67FB1E252BE99B00B7D5C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,10 +63,12 @@
 				FB67FB1C252BE99B00B7D5C3 /* AppDelegate.swift */,
 				FB67FB1E252BE99B00B7D5C3 /* SceneDelegate.swift */,
 				FB67FB20252BE99B00B7D5C3 /* ViewController.swift */,
+				FB44E7802530BF98005C78E0 /* CollectionViewCell.swift */,
 				FB67FB22252BE99B00B7D5C3 /* Main.storyboard */,
 				FB67FB25252BE99E00B7D5C3 /* Assets.xcassets */,
 				FB67FB27252BE99E00B7D5C3 /* LaunchScreen.storyboard */,
 				FB67FB2A252BE99E00B7D5C3 /* Info.plist */,
+				FB44E7832530DD0B005C78E0 /* Tharlon-Regular.ttf */,
 			);
 			path = MySunday;
 			sourceTree = "<group>";
@@ -126,6 +132,7 @@
 			files = (
 				FB67FB29252BE99E00B7D5C3 /* LaunchScreen.storyboard in Resources */,
 				FB67FB26252BE99E00B7D5C3 /* Assets.xcassets in Resources */,
+				FB44E7842530DD0B005C78E0 /* Tharlon-Regular.ttf in Resources */,
 				FB67FB24252BE99B00B7D5C3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +146,7 @@
 			files = (
 				FB67FB21252BE99B00B7D5C3 /* ViewController.swift in Sources */,
 				FB67FB1D252BE99B00B7D5C3 /* AppDelegate.swift in Sources */,
+				FB44E7812530BF98005C78E0 /* CollectionViewCell.swift in Sources */,
 				FB67FB1F252BE99B00B7D5C3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
