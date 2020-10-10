@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         getSevenDay()
         appendingThisWeekQuotes()
-        pageControl.numberOfPages = quoteForTheWeek.count
+        pageControl.numberOfPages = quoteForTheWeek.count + 2
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -67,6 +67,24 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as? HeaderCollectionReusableView else {
+                fatalError("invalid view type")
+            }
+            return headerView
+            
+        case UICollectionView.elementKindSectionFooter:
+            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "footerCell", for: indexPath)
+            return footerView
+        default:
+            assert(false, "Invalid element type")
+        }
+       
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         quoteForTheWeek.count
     }
@@ -92,5 +110,12 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         self.pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width, height: view.frame.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width, height: view.frame.height)
+    }
 }
 
