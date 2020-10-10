@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "cd5c8074c9e7ec8ec839c11f79ff2c1a.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

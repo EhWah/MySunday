@@ -42,6 +42,10 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wall2" translatesAutoresizingMaskIntoConstraints="NO" id="kUq-1C-sap">
                                                     <rect key="frame" x="0.0" y="0.0" width="409" height="577"/>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oP4-Pu-VuC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="409" height="577"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VpY-aK-LTM">
                                                     <rect key="frame" x="20" y="216" width="369" height="145"/>
                                                     <subviews>
@@ -69,18 +73,23 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="VpY-aK-LTM" secondAttribute="trailing" constant="20" symbolic="YES" id="3Ye-Nz-NcE"/>
+                                                <constraint firstItem="oP4-Pu-VuC" firstAttribute="trailing" secondItem="kUq-1C-sap" secondAttribute="trailing" id="KJL-r9-mBc"/>
                                                 <constraint firstItem="kUq-1C-sap" firstAttribute="leading" secondItem="wS1-t3-N8y" secondAttribute="leading" id="Pc0-b8-u6l"/>
                                                 <constraint firstItem="HUP-c2-nkY" firstAttribute="centerX" secondItem="wS1-t3-N8y" secondAttribute="centerX" id="QXl-2w-H4W"/>
+                                                <constraint firstItem="oP4-Pu-VuC" firstAttribute="bottom" secondItem="kUq-1C-sap" secondAttribute="bottom" id="VIj-SC-NyO"/>
+                                                <constraint firstItem="oP4-Pu-VuC" firstAttribute="leading" secondItem="kUq-1C-sap" secondAttribute="leading" id="WF1-9d-o90"/>
                                                 <constraint firstItem="kUq-1C-sap" firstAttribute="top" secondItem="wS1-t3-N8y" secondAttribute="top" id="X7a-vX-qzM"/>
                                                 <constraint firstItem="VpY-aK-LTM" firstAttribute="leading" secondItem="wS1-t3-N8y" secondAttribute="leading" constant="20" symbolic="YES" id="Yva-ak-568"/>
                                                 <constraint firstItem="HUP-c2-nkY" firstAttribute="top" secondItem="wS1-t3-N8y" secondAttribute="top" constant="20" id="eGf-Uw-iIr"/>
                                                 <constraint firstAttribute="trailing" secondItem="kUq-1C-sap" secondAttribute="trailing" id="jqH-BU-fYV"/>
                                                 <constraint firstAttribute="bottom" secondItem="kUq-1C-sap" secondAttribute="bottom" id="njq-bq-Dpg"/>
                                                 <constraint firstItem="VpY-aK-LTM" firstAttribute="centerY" secondItem="wS1-t3-N8y" secondAttribute="centerY" id="xK2-nu-Ss7"/>
+                                                <constraint firstItem="oP4-Pu-VuC" firstAttribute="top" secondItem="kUq-1C-sap" secondAttribute="top" id="xw5-WY-iIQ"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="409" height="577"/>
                                         <connections>
+                                            <outlet property="backgroundImage" destination="kUq-1C-sap" id="Iaz-ws-Zkf"/>
                                             <outlet property="date" destination="HUP-c2-nkY" id="wb4-Vb-Jfs"/>
                                             <outlet property="quote" destination="bSh-R5-L3t" id="j5Y-j9-LVF"/>
                                             <outlet property="refer" destination="y4E-5S-nwa" id="7Nv-C7-HA1"/>

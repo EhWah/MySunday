@@ -23,12 +23,14 @@ class ViewController: UIViewController {
     let calendar = Calendar.current
     var days = [String]()
     var quoteForTheWeek = [MyData]()
+    var randomImageNumber = [1,2,3,4,5,6,7,8].shuffled()
     
     let quotes = [
         MyData(quote: "t*hI’ftH:wIvU,G:r:wohbOehIwtdObOeDwrH:bO ", refe: "vl:uO 1;37", month: "Oct", day: "6", year: "2020"),
         MyData(quote: "t*hI’ftH:wIvU,G:r:wohbOehIwtdObOeDwrH:bO ", refe: "vl:uO 1;37", month: "Oct", day: "7", year: "2020"),
         MyData(quote: "rhrhIyS:w*:*:rhItJO,G:’D; t0J’OubOwIohOngtD:vU,G:vD:", refe: "1u&HOol; 8;3", month: "Oct", day: "8", year: "2020"),
-        MyData(quote: "S:w*:*:rhIqdurdOvUtohOngwIwrH:rH:’D;’ftBuU;ohOng0Jtod;ehOwohOng’H;bOwIeDwrH:bO", refe: "1u&HOol; 8;2", month: "Oct", day: "9", year: "2020")
+        MyData(quote: "S:w*:*:rhIqdurdOvUtohOngwIwrH:rH:’D;’ftBuU;ohOng0Jtod;ehOwohOng’H;bOwIeDwrH:bO", refe: "1u&HOol; 8;2", month: "Oct", day: "9", year: "2020"),
+        MyData(quote: "S:w*:*:rhIqdurdOvUtohOngwIwrH:rH:’D;’ftBuU;ohOng0Jtod;ehOwohOng’H;bOwIeDwrH:bO", refe: "1u&HOol; 8;2", month: "Oct", day: "10", year: "2020")
        ]
     
     override func viewDidLoad() {
@@ -38,6 +40,7 @@ class ViewController: UIViewController {
         pageControl.numberOfPages = quoteForTheWeek.count
         collectionView.delegate = self
         collectionView.dataSource = self
+        
     }
 
     func getSevenDay() {
@@ -72,9 +75,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
       
         let quote = quoteForTheWeek[indexPath.item]
+        
         cell.quote.text = quote.quote
         cell.date.text = "\(quote.month)  \(quote.day), \(quote.year)"
         cell.refer.text = quote.refe
+        cell.backgroundImage.image = UIImage(named: "wall\(randomImageNumber[indexPath.item])")
         
         return cell
     }
