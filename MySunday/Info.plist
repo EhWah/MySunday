@@ -58,6 +58,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Tharlon-Regular.ttf</string>
+		<string>Saw cfcr000.TTF</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
