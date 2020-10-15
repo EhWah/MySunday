@@ -17,7 +17,7 @@
 		FB67FB24252BE99B00B7D5C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB67FB22252BE99B00B7D5C3 /* Main.storyboard */; };
 		FB67FB26252BE99E00B7D5C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB67FB25252BE99E00B7D5C3 /* Assets.xcassets */; };
 		FB67FB29252BE99E00B7D5C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB67FB27252BE99E00B7D5C3 /* LaunchScreen.storyboard */; };
-		FB9F766B253212D200529361 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9F766A253212D200529361 /* HeaderCollectionReusableView.swift */; };
+		FB74B9382539111500E68CE7 /* MyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB74B9372539111500E68CE7 /* MyData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,7 @@
 		FB67FB25252BE99E00B7D5C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB67FB28252BE99E00B7D5C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB67FB2A252BE99E00B7D5C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FB9F766A253212D200529361 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		FB74B9372539111500E68CE7 /* MyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +70,7 @@
 				FB67FB1E252BE99B00B7D5C3 /* SceneDelegate.swift */,
 				FB67FB20252BE99B00B7D5C3 /* ViewController.swift */,
 				FB44E7802530BF98005C78E0 /* CollectionViewCell.swift */,
-				FB9F766A253212D200529361 /* HeaderCollectionReusableView.swift */,
+				FB74B9372539111500E68CE7 /* MyData.swift */,
 				FB4F456A253130D400B01FAA /* Extension.swift */,
 				FB67FB22252BE99B00B7D5C3 /* Main.storyboard */,
 				FB67FB25252BE99E00B7D5C3 /* Assets.xcassets */,
@@ -158,7 +158,7 @@
 				FB67FB21252BE99B00B7D5C3 /* ViewController.swift in Sources */,
 				FB67FB1D252BE99B00B7D5C3 /* AppDelegate.swift in Sources */,
 				FB44E7812530BF98005C78E0 /* CollectionViewCell.swift in Sources */,
-				FB9F766B253212D200529361 /* HeaderCollectionReusableView.swift in Sources */,
+				FB74B9382539111500E68CE7 /* MyData.swift in Sources */,
 				FB67FB1F252BE99B00B7D5C3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

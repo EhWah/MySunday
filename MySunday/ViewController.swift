@@ -7,14 +7,6 @@
 
 import UIKit
 
-struct MyData {
-    var quote: String
-    var refe: String
-    var month: String
-    var day: String
-    var year: String
-}
-
 class ViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
@@ -24,25 +16,39 @@ class ViewController: UIViewController {
     var days = [String]()
     var quoteForTheWeek = [MyData]()
     var randomImageNumber = [1,2,3,4,5,6,7,8].shuffled()
-    
-    let quotes = [
-        MyData(quote: "t*hI’ftH:wIvU,G:r:wohbOehIwtdObOeDwrH:bO ", refe: "vl:uO 1;37", month: "Oct", day: "6", year: "2020"),
-        MyData(quote: "t*hI’ftH:wIvU,G:r:wohbOehIwtdObOeDwrH:bO ", refe: "vl:uO 1;37", month: "Oct", day: "7", year: "2020"),
-        MyData(quote: "rhrhIyS:w*:*:rhItJO,G:’D; t0J’OubOwIohOngtD:vU,G:vD:", refe: "1u&HOol; 8;3", month: "Oct", day: "8", year: "2020"),
-        MyData(quote: "S:w*:*:rhIqdurdOvUtohOngwIwrH:rH:’D;’ftBuU;ohOng0Jtod;ehOwohOng’H;bOwIeDwrH:bO", refe: "1u&HOol; 8;2", month: "Oct", day: "9", year: "2020"),
-        MyData(quote: "S:w*:*:rhIqdurdOvUtohOngwIwrH:rH:’D;’ftBuU;ohOng0Jtod;ehOwohOng’H;bOwIeDwrH:bO", refe: "1u&HOol; 8;2", month: "Oct", day: "10", year: "2020")
-       ]
+    var quotes = [MyData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchData()
         getSevenDay()
         appendingThisWeekQuotes()
-        pageControl.numberOfPages = quoteForTheWeek.count + 2
+        pageControl.numberOfPages = quoteForTheWeek.count
         collectionView.delegate = self
         collectionView.dataSource = self
-        
     }
+    
+    func fetchData() {
+        let urlString = "https://raw.githubusercontent.com/EhWah/BibleVerseJsonFile/main/MyData.json"
 
+            if let url = URL(string: urlString) {
+                if let data = try? Data(contentsOf: url) {
+                    // we're OK to parse!
+                    parse(json: data)
+                }
+            }
+    }
+    
+    func parse(json: Data) {
+        let decoder = JSONDecoder()
+
+        if let jsonPetitions = try? decoder.decode([MyData].self, from: json) {
+            quotes.append(contentsOf: jsonPetitions)
+            collectionView.reloadData()
+        }
+        print(quotes.count)
+    }
+    
     func getSevenDay() {
         var dates = calendar.startOfDay(for: Date())
         for _ in 1...7 {
@@ -68,23 +74,6 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        switch kind {
-        case UICollectionView.elementKindSectionHeader:
-            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as? HeaderCollectionReusableView else {
-                fatalError("invalid view type")
-            }
-            return headerView
-            
-        case UICollectionView.elementKindSectionFooter:
-            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "footerCell", for: indexPath)
-            return footerView
-        default:
-            assert(false, "Invalid element type")
-        }
-       
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         quoteForTheWeek.count
     }
@@ -109,13 +98,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         self.pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.height)
-    }
+   
 }
 
