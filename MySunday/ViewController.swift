@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     let calendar = Calendar.current
     var days = [String]()
     var quoteForTheWeek = [MyData]()
-    var randomImageNumber = [1,2,3,4,5,6,7,8].shuffled()
+    var randomImageNumber = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26].shuffled()
     var quotes = [MyData]()
     
     override func viewDidLoad() {
@@ -67,6 +67,9 @@ class ViewController: UIViewController {
             default:
                 print("not available")
             }
+        }
+        quoteForTheWeek.sort { (mydata1, mydata2) -> Bool in
+            mydata1.day > mydata2.day
         }
     }
 
